@@ -16,7 +16,7 @@ a spider for crawling bookmark from https://www.bookmarkearth.com/
 
 > [书签地球117页_20200816.xlsx免费下载 - 90网盘](https://link.zhihu.com/?target=https%3A//o8.cn/B9MevE) 密码：y070
 
-![bookmarkearthweb](/images/bookmarkearthweb.png)
+![书签地球网站首页](/images/bookmarkearthweb.png)
 
 ## 如何使用
 
@@ -28,4 +28,4 @@ a spider for crawling bookmark from https://www.bookmarkearth.com/
 
 `python bookmarkspider.py`
 
-![](/images/run.gif)
+![启动](/images/run.gif)
