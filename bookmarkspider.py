@@ -23,13 +23,14 @@ class BookmarkSpider(object):
         try:
             res = requests.get(url,timeout=100,headers=self.headers)
             soup = BeautifulSoup(res.text, 'lxml')
-            tags=soup.find(attrs={"class": "nav-left left-menu"})
+            
+            tags=soup.find(attrs={"class": "nav-left left-menu "})
+     
             if tags is not None:
                 real_url = tags.find('li').a.get("data-url")
                 real_url_desc = tags.find('li').a.get("data-name")
             else:
                 real_url, real_url_desc=['','']
-            
             print(real_url_desc)
             return real_url, real_url_desc
         except Exception as e:
@@ -43,8 +44,7 @@ class BookmarkSpider(object):
         print("共有【%s】 个页面需要解析" % pagenums)
         url_lst = ["https://www.bookmarkearth.com/page?currentPage=%s" % (i + 1) for i in range(pagenums)]
         bookmarks_lst = []
-        for url in url_lst:
-            
+        for url in url_lst:   
             soup = self.start_requests(url)
             bookmarks = self.parse_bookmark(soup)
             print("此页面共获取到%s个书签" % len(bookmarks))
